@@ -1,12 +1,10 @@
 # include <reg52.h>
 # include "lcd.h"
-
-
 #define LCD_DATAPORT P0                           
+
 sbit RW=P2^5;                                    
 sbit RS=P2^6;                                     
 sbit EN=P2^7;                                    
-
 sbit DB4=P0^4;                               
 sbit DB5=P0^5;
 sbit DB6=P0^6;
@@ -70,14 +68,13 @@ void LCD_Data (unsigned char Data)
 void LCD_Intialization(void)
 {  
 	                                         
-	 Delay(100);
+   Delay(100);
    LCD_Command(0x02); 
    LCD_Command(0x28);
    LCD_Command(0x0C);  
    LCD_Command(0x01);  
    LCD_Command(0x80);  
 }
-
 
 
  void Set_cursor(int row, int coloum)
@@ -90,7 +87,6 @@ void LCD_Intialization(void)
  
  }
  
-
  int lcd_Pow(int X,int Y)
 {
 	unsigned char i;
@@ -118,9 +114,6 @@ void LCD_ShowChar(unsigned char Line,unsigned char Column,unsigned char Char)
 	Set_cursor(Line,Column);
 	LCD_Data(Char);
 }
-
-
-
 void LCD_ShowString(unsigned char Line,unsigned char Column,char *String)  
 {
 	unsigned char i;
