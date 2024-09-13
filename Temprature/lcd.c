@@ -1,12 +1,10 @@
 # include <reg52.h>
 # include "lcd.h"
-
-
 #define LCD_DATAPORT P0                           
+
 sbit RW=P2^5;                                     
 sbit RS=P2^6;                                  
 sbit EN=P2^7;                                   
-
 sbit DB4=P0^4;                               
 sbit DB5=P0^5;
 sbit DB6=P0^6;
