@@ -2,8 +2,6 @@
 # include "lcd.h"
 #include <math.h>
 
-
-
 sbit CS =P3^5;          
 sbit DCLK =P3^6;       
 sbit DIN =P3^4;      
@@ -16,24 +14,21 @@ unsigned int displayLDR();
 void Beep();
 float Set_temp();
 unsigned char ADC_Driver (bit A0,bit A1,bit A2)          //SPI Protcol
-{  
-	
+{  	
 	unsigned char i, temp=0;
 	 DCLK=0;                                       
    CS=0;                                          
 	 
 	 DCLK=0;  DIN=1;  DCLK=1;                     
 	 DCLK=0;  DIN=A2;  DCLK=1;                     
-   DCLK=0;  DIN=A1;  DCLK=1;                    
+         DCLK=0;  DIN=A1;  DCLK=1;                    
 	 DCLK=0;  DIN=A0;  DCLK=1;                    
 	 DCLK=0;  DIN=1;  DCLK=1;                      
 	 DCLK=0;  DIN=1;  DCLK=1;                     
 	 DCLK=0;  DIN=1;  DCLK=1;                      
 	 DCLK=0;  DIN=1;  DCLK=1;                     
-	
-  
-	DCLK = 0;        
-	Delay(10);
+	 DCLK = 0;        
+	 Delay(10);
 
 
 	for(i=0;i<=7;i++)
