@@ -1,7 +1,6 @@
 # include <reg51.h>
 # include "lcd.h"
 # include <math.h>
-
 sbit CS =P3^5;          
 sbit DCLK =P3^6;        
 sbit DIN =P3^4;         
