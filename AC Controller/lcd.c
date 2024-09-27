@@ -1,6 +1,5 @@
 # include <reg51.h>
 # include "lcd.h"
-
 #define LCD_DATAPORT P0                         
 sbit RW=P2^5;                                     
 sbit RS=P2^6;                                     
@@ -13,7 +12,6 @@ sbit DB7=P0^7;
 void Delay (unsigned int value)        
 {
     unsigned int j;
-    
     for (j=0; j<value ;j++)
     {  
         TH1=0xFC;
@@ -25,14 +23,12 @@ void Delay (unsigned int value)
         TR1=0;
     }
 }
-
 void LCD4_write (unsigned char Value)
 {  
     DB4=0x10 & Value; 
     DB5=0x20 & Value; 
     DB6=0x40 & Value; 
     DB7=0x80 & Value; 
-
     EN=1;                       
     Delay(1);                   
     EN=0;                       
