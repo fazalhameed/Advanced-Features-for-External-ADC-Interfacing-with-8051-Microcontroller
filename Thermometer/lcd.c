@@ -1,7 +1,6 @@
 # include <reg52.h>
 # include "lcd.h"
 # include "ds1302.h"
-
 #define LCD_DATAPORT P0                           
 sbit RW=P2^5;                                     
 sbit RS=P2^6;                                     
